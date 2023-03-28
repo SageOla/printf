@@ -2,11 +2,12 @@
 
 void print_buffer(char buffer[], int *buff_ind);
 
+
 /**
- * _printf - Printf function
- * @format: format.
- * Return: Printed chars.
- */
+*_printf - Printf function.
+*@format: format.
+*Return: Printed chars.
+*/
 int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
@@ -36,7 +37,7 @@ int _printf(const char *format, ...)
 			width = get_width(format, &i, list);
 			precision = get_precision(format, &i, list);
 			size = get_size(format, &i);
-			++i;
+			i++;
 			printed = handle_print(format, &i, list, buffer,
 				flags, width, precision, size);
 			if (printed == -1)
@@ -50,6 +51,7 @@ int _printf(const char *format, ...)
 	va_end(list);
 
 	return (printed_chars);
+
 }
 
 /**
@@ -64,3 +66,4 @@ void print_buffer(char buffer[], int *buff_ind)
 
 	*buff_ind = 0;
 }
+
